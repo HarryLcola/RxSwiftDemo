@@ -14,6 +14,12 @@
 		AC05C88420D365BA0083933B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC05C88220D365BA0083933B /* LaunchScreen.storyboard */; };
 		AC05C89220D369200083933B /* HQB_MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC05C89120D369200083933B /* HQB_MenuModel.swift */; };
 		AC05C89420D36BA70083933B /* MeunViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC05C89320D36BA70083933B /* MeunViewModel.swift */; };
+		AC23F97F21001EFB00F69698 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23F97E21001EFB00F69698 /* ViewModelType.swift */; };
+		AC23F98121001FCD00F69698 /* SayHelloVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23F98021001FCD00F69698 /* SayHelloVIewModel.swift */; };
+		AC23F983210021BB00F69698 /* SayHelloVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23F982210021BB00F69698 /* SayHelloVC.swift */; };
+		AC7748ED20DC8BD1008E2ACD /* ServerAccessAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7748EC20DC8BD1008E2ACD /* ServerAccessAPI.swift */; };
+		AC79767720FC31F700D9C107 /* StationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79767620FC31F700D9C107 /* StationAPI.swift */; };
+		AC93734920E094D100DDD16B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93734820E094D100DDD16B /* LoginVC.swift */; };
 		D2BB673DB78BFB1458E6F716 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45047259763F4A8B226681F0 /* Pods_RxSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +34,12 @@
 		AC05C88520D365BA0083933B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC05C89120D369200083933B /* HQB_MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQB_MenuModel.swift; sourceTree = "<group>"; };
 		AC05C89320D36BA70083933B /* MeunViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeunViewModel.swift; sourceTree = "<group>"; };
+		AC23F97E21001EFB00F69698 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		AC23F98021001FCD00F69698 /* SayHelloVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayHelloVIewModel.swift; sourceTree = "<group>"; };
+		AC23F982210021BB00F69698 /* SayHelloVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayHelloVC.swift; sourceTree = "<group>"; };
+		AC7748EC20DC8BD1008E2ACD /* ServerAccessAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAccessAPI.swift; sourceTree = "<group>"; };
+		AC79767620FC31F700D9C107 /* StationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationAPI.swift; sourceTree = "<group>"; };
+		AC93734820E094D100DDD16B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D29811ABF0F270259FFBEB21 /* Pods-RxSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		EE8F4D04EA8BC2903BF999AB /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				AC05C87920D365BA0083933B /* AppDelegate.swift */,
+				AC7748EA20DC8B09008E2ACD /* Tools */,
 				AC05C88B20D3675B0083933B /* Class */,
 				AC05C88020D365BA0083933B /* Assets.xcassets */,
 				AC05C88520D365BA0083933B /* Info.plist */,
@@ -105,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				AC05C87B20D365BA0083933B /* ViewController.swift */,
+				AC93734820E094D100DDD16B /* LoginVC.swift */,
+				AC23F982210021BB00F69698 /* SayHelloVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				AC05C89320D36BA70083933B /* MeunViewModel.swift */,
+				AC23F97E21001EFB00F69698 /* ViewModelType.swift */,
+				AC23F98021001FCD00F69698 /* SayHelloVIewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -140,6 +157,23 @@
 				AC05C88220D365BA0083933B /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		AC7748EA20DC8B09008E2ACD /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AC7748EB20DC8BB1008E2ACD /* DataAccess */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		AC7748EB20DC8BB1008E2ACD /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				AC7748EC20DC8BD1008E2ACD /* ServerAccessAPI.swift */,
+				AC79767620FC31F700D9C107 /* StationAPI.swift */,
+			);
+			path = DataAccess;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,16 +254,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -279,9 +321,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7748ED20DC8BD1008E2ACD /* ServerAccessAPI.swift in Sources */,
 				AC05C87C20D365BA0083933B /* ViewController.swift in Sources */,
+				AC93734920E094D100DDD16B /* LoginVC.swift in Sources */,
+				AC23F983210021BB00F69698 /* SayHelloVC.swift in Sources */,
+				AC79767720FC31F700D9C107 /* StationAPI.swift in Sources */,
+				AC23F97F21001EFB00F69698 /* ViewModelType.swift in Sources */,
 				AC05C89220D369200083933B /* HQB_MenuModel.swift in Sources */,
 				AC05C87A20D365BA0083933B /* AppDelegate.swift in Sources */,
+				AC23F98121001FCD00F69698 /* SayHelloVIewModel.swift in Sources */,
 				AC05C89420D36BA70083933B /* MeunViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,7 +474,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "---.RxSwiftDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -442,7 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "---.RxSwiftDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

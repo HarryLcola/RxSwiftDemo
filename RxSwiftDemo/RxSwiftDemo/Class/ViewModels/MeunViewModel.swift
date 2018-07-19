@@ -14,10 +14,10 @@ import RxDataSources
 class MeunViewModel {
     let sections = Observable.just([
         HQB_MenuSection(hearder: "--", items: [
-            "基本介绍、安装配置",
-            "响应式编程与传统式编程的比较样例",
-            "Observable介绍、创建可观察序列",
-            "Observable订阅、事件监听、订阅销毁",
+            "发送验证码",
+            "登陆",
+            "获取电站列表",
+            "打招呼",
             "观察者1： AnyObserver、Binder",
             "观察者2： 自定义可绑定属性",
             "Subjects、Variables",

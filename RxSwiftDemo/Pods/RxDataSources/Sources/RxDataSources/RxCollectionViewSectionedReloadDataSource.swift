@@ -21,8 +21,12 @@ open class RxCollectionViewSectionedReloadDataSource<S: SectionModelType>
     
     public typealias Element = [S]
 
+    public override init() {
+        super.init()
+    }
+
     open func collectionView(_ collectionView: UICollectionView, observedEvent: Event<Element>) {
-        Binder(self) { dataSource, element in
+        UIBindingObserver(UIElement: self) { dataSource, element in
             #if DEBUG
                 self._dataSourceBound = true
             #endif

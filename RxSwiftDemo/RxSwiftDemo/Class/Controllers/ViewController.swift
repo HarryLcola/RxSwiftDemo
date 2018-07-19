@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.swift
 //  RxSwiftDemo
 //
@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import NSObject_Rx
+import ObjectMapper
+import Moya
 
 class ViewController: UIViewController {
     let cellIdentifier = "cell"
@@ -29,14 +31,13 @@ class ViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         // MARK: -- 创建数据源
-        let dataSource = RxTableViewSectionedAnimatedDataSource<HQB_MenuSection>(configureCell: {
+        let dataSource = RxTableViewSectionedReloadDataSource<HQB_MenuSection>()
+        dataSource.configureCell = {
             (ds, tv, ip, e) in
             let cell = self.tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier)
             cell?.textLabel?.text = "\(e)"
             return cell!
-        }, titleForHeaderInSection: { ds, index in
-            return ds.sectionModels[index].hearder
-        })
+        }
         
         // MARK: -- 绑定单元格数据
         meunViewModel.sections.bind(to: tableView.rx.items(dataSource: dataSource))
@@ -47,12 +48,42 @@ class ViewController: UIViewController {
         tableView.rx.itemSelected.map { indexPath in
             return (indexPath, dataSource[indexPath])
             }.subscribe(onNext: { indexPath, model in
-                print(model)
+                self.clickTableViewCellWith(indexpath: indexPath)
             }).disposed(by: rx.disposeBag)
-        /// 或者也可以用下面的方法
-//        tableView.rx.modelSelected(HQB_MenuSection.self).subscribe(onNext: { model in
-//            print(model)
-//        }).disposed(by: rx.disposeBag)
+    }
+    
+    func clickTableViewCellWith(indexpath: IndexPath) {
+        switch indexpath.row {
+        case 0: do {
+            let provider = RxMoyaProvider<UserProfile>()
+            
+            provider.request(.sms(phoneNum: "13750088412"))
+            .filterSuccessfulStatusCodes()
+                .mapJSON().subscribe(onNext: { json in
+                    print(json)
+                    let message  = json as! Dictionary<String, Any>
+                    
+                    let alertView = UIAlertController(title: "提示", message: "\(message["result"]!)", preferredStyle: .alert)
+                    self.present(alertView, animated: true, completion: nil)
+                }).addDisposableTo(rx.disposeBag)
+            }
+        case 1:
+            self.performSegue(withIdentifier: "showLoginVCSegue", sender: nil)
+        case 2:
+            // 获取电站数据
+            let provider = RxMoyaProvider<StationAPI>()
+            provider.request(.getStationList()) { result in
+                print(result)
+                if case let .success(response) = result {
+                    let data = try? response.mapJSON()
+//                    print(data)
+                }
+            }
+        case 3:
+            self.performSegue(withIdentifier: "showSayHelloVCSegue", sender: nil)
+        default:
+            return
+        }
     }
 }
 

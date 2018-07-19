@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/RxSwiftCommunity/NSObject-Rx/tree/master.svg?style=svg)](https://circleci.com/gh/RxSwiftCommunity/NSObject-Rx/tree/master)
+[![Build Status](https://travis-ci.org/RxSwiftCommunity/NSObject-Rx.svg?branch=master)](https://travis-ci.org/RxSwiftCommunity/NSObject-Rx)
 
 NSObject+Rx
 ===========
@@ -48,7 +48,7 @@ And that'll be 👌
 
 Add to `Cartfile`:
 ```
-github "RxSwiftCommunity/NSObject-Rx"
+github "RxSwiftCommunity/NSObject-Rx" ~> 2.0.0
 ```
 Add frameworks to your project (no need to "copy items if needed")
 

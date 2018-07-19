@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension BinaryInteger {
+extension Integer {
     typealias identity = Self
 
     public var identity: Self {
